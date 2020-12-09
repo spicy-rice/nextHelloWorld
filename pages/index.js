@@ -7,7 +7,8 @@ export default function Home() {
       <Head>
         <nav>
           <a href="/posts/fetch">Comic Fetch</a>
-          <a href="/posts/fetch">Counter</a>
+          &nbsp;
+          <a href="/posts/counter">Counter</a>
         </nav>
 
         <title>Create Next App</title>
