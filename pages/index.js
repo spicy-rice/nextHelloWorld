@@ -5,6 +5,11 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
+        <nav>
+          <a href="/posts/fetch">Comic Fetch</a>
+          <a href="/posts/fetch">Counter</a>
+        </nav>
+
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

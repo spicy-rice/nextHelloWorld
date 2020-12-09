@@ -18,3 +18,8 @@ a {
 img {
   width: 80%;
 }
+
+nav {
+  padding: 20px;
+  text-align: center;
+}
