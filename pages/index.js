@@ -8,7 +8,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <nav>
-          <a href="/posts/fetch">Comic Fetch</a>
+          <a href="/posts/fetch">Fetch</a>
           &nbsp;
           <a href="/posts/counter">Counter</a>
         </nav>

@@ -6,9 +6,28 @@ const axios = require("axios");
 // app.use(cors());
 
 export default function Fetch() {
-  //Comic();
-  PokemonViewer;
-  return <h1>Fetch</h1>;
+  const pokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
+  const [pokemon, setPokemon] = useState({});
+
+  async function getPokemon() {
+    const res = await fetch(pokemonUrl);
+    console.log(res);
+    const data = await res.json();
+    console.log(data);
+    console.log(data.results[3].name);
+    setPokemon(data.results[3].name);
+  }
+
+  return (
+    <div>
+      <div>
+        <h1>Fetch</h1>;
+      </div>
+
+      <button onClick={getPokemon}> Pokemon </button>
+      <p>{pokemon}</p>
+    </div>
+  );
 }
 
 // function Comic() {
@@ -30,25 +49,3 @@ export default function Fetch() {
 //     }
 //   }, []);
 // }
-
-function PokemonViewer({ pokemonId }) {
-  const [pokemon, setPokemon] = useState({});
-
-  useEffect(() => {
-    if (pokemon) {
-      async function getPokemon() {
-        const res = await axios.get(
-          `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
-          {
-            headers: { accept: "application/json" },
-          }
-        );
-        const data = await res.json();
-        console.log(data);
-        setPokemon(data);
-        console.log(data.sprites.front_default);
-      }
-      getPokemon();
-    }
-  }, [pokemonId]);
-}
